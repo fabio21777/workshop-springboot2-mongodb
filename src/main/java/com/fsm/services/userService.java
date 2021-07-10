@@ -35,4 +35,13 @@ public class userService {
 	public User fromDto(UserDTO userDTO) {
 		return new User(userDTO.getId(),userDTO.getName(),userDTO.getEmail());
 	}
+	public User update(User outdatedUser) {
+		User toBeUpdateUser = findById(outdatedUser.getId());
+		update(toBeUpdateUser,outdatedUser);
+		return userRepository.save(toBeUpdateUser);
+	}
+	public void update(User toBeUpdateUser,User outdatedUser) {
+		toBeUpdateUser.setName(outdatedUser.getName());
+		toBeUpdateUser.setEmail(outdatedUser.getEmail());
+	}
 }
