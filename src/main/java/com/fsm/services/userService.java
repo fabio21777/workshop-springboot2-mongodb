@@ -12,7 +12,7 @@ import com.fsm.repository.UserRepository;
 import com.fsm.services.exception.ObjectNotFoundException;
 
 @Service
-public class userService {
+public class UserService {
 	@Autowired
 	private UserRepository userRepository;
 	
